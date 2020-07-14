@@ -2,7 +2,7 @@ const { useState } = require("react")
 
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial)
-  const [history, setHistory] = useState([initial]);
+  const [history] = useState([initial]);
 
   function transition(newMode, replace = false) {
     if (replace) {
@@ -13,6 +13,7 @@ export default function useVisualMode(initial) {
       history.push(newMode);
       setMode(newMode);
     }
+
   };
 
   function back() {
