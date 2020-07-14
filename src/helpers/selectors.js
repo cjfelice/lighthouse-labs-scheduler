@@ -31,8 +31,6 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day) {
   const appointArr = [];
-  const interviewArr = [];
-  const interOBJ = {};
   if (state.days[0]) {
     const filteredDays = state.days.filter((days) => days.name === day);
     if (filteredDays[0]) {

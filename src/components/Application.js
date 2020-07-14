@@ -1,6 +1,4 @@
 
-import Button from "components/Button";
-import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
 import React, { useState, useEffect } from "react";
 import Appointment from "components/Appointment";
@@ -44,7 +42,6 @@ export default function Application(props) {
     appointments[id].interview = null;
     return axios.delete(`/api/appointments/${id}`)
     .then(() => {
-      console.log("worked");
       setState({...state, appointments });
     })
   } 
@@ -72,6 +69,8 @@ export default function Application(props) {
         id={appointment.id}
         time={appointment.time}
         interview={interview}
+        interviewer={interview && interview.interviewer}
+        student={interview && interview.student}
         interviewers={dayInterviewers}
         bookInterview={bookInterview}
         cancelInterview={cancelInterview}
