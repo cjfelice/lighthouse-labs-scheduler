@@ -39,9 +39,6 @@ export default function useApplicationData(initial) {
       if (day.name !== state.day) {
         return day;
       }
-      console.log("day.id", day.id);
-      console.log("day.spots:", day.spots);
-      console.log("spotCount:", spotCount);
       return {
         ...day,
         spots: spotCount
