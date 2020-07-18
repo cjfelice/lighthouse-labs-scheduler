@@ -2,13 +2,13 @@ import React from "react";
 
 import "components/DayListItem.scss";
 
-var classNames = require('classnames');
+var classNames = require("classnames");
 
 const formatSpots = function(spots) {
   if (spots === 0) {
-    return 'no spots remaining';
+    return "no spots remaining";
   } else if (spots === 1) {
-    return '1 spot remaining';
+    return "1 spot remaining";
   } else {
     return `${spots} spots remaining`;
   }

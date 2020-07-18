@@ -140,7 +140,7 @@ describe("Application", () => {
     
     axios.delete.mockRejectedValueOnce();
 
-    const { container, debug } = render(<Application />);
+    const { container } = render(<Application />);
 
     await waitForElement(() => getByText(container, "Archibald Cohen"));
     
