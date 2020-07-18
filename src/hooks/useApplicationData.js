@@ -14,9 +14,9 @@ export default function useApplicationData(initial) {
 
   useEffect(() => {
     Promise.all([
-      Promise.resolve(axios.get(`http://localhost:8001/api/days`)),
-      Promise.resolve(axios.get(`http://localhost:8001/api/appointments`)),
-      Promise.resolve(axios.get(`http://localhost:8001/api/interviewers`))
+      Promise.resolve(axios.get(`/api/days`)),
+      Promise.resolve(axios.get(`/api/appointments`)),
+      Promise.resolve(axios.get(`/api/interviewers`))
     ]).then((all) => {
       const [dayData, appointmentData, interviewerData] = all;
       setState(prev => ({ ...prev, days: dayData.data, appointments: appointmentData.data, interviewers: interviewerData.data }));
@@ -25,12 +25,12 @@ export default function useApplicationData(initial) {
 
 
   const setSpots = (state) => {
-    let spotCount = 5;
+    let spotCount = 0;
     for (let day in state.days) {
       if (state.days[day].name === state.day) {
         for (let id of state.days[day].appointments) {
-          if (state.appointments[id].interview !== null) {
-            spotCount--;
+          if (state.appointments[id].interview === null) {
+            spotCount++;
           }
         }
       }
@@ -64,10 +64,16 @@ export default function useApplicationData(initial) {
 
 
   function cancelInterview(id) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    }
     const appointments = {
-      ...state.appointments
+      ...state.appointments,
+      [id]: appointment
     };
-    appointments[id].interview = null;
+    //dont mutate!//
+    // appointments[id].interview = null;
     return axios.delete(`/api/appointments/${id}`)
     .then(() => {
       setState(state => ({...state, appointments }));

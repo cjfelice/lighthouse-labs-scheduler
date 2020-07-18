@@ -29,7 +29,7 @@ export default function Application(props) {
         id={appointment.id}
         time={appointment.time}
         interview={interview}
-        interviewer={"streeeng"}
+        interviewer={interview && interview.interviewer}
         student={interview && interview.student}
         interviewers={dayInterviewers}
         bookInterview={bookInterview}
