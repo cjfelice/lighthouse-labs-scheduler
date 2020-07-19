@@ -25,3 +25,10 @@ npm test
 ```sh
 npm run storybook
 ```
+! ["Full Page View"] (https://github.com/cjfelice/lighthouse-labs-scheduler/blob/master/docs/Screen%20Shot%202020-07-18%20at%205.08.28%20PM.png?raw=true)
+
+
+! ["Appointment Edit View"] (https://github.com/cjfelice/lighthouse-labs-scheduler/blob/master/docs/Screen%20Shot%202020-07-18%20at%205.09.25%20PM.png?raw=true)
+
+
+! ["Narrow-width View"] (https://github.com/cjfelice/lighthouse-labs-scheduler/blob/master/docs/Screen%20Shot%202020-07-18%20at%205.10.10%20PM.png?raw=true)
