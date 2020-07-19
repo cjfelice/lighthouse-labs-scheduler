@@ -1,5 +1,9 @@
 # Interview Scheduler
 
+A single page React app for booking and managing interview appointments.
+
+Utilizes React & Axios with Babel and Webpack. Testing environment handled by Storybook, Cypress and Jest.
+
 ## Setup
 
 Install dependencies with `npm install`.
