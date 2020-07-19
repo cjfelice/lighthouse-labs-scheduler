@@ -25,6 +25,7 @@ npm test
 ```sh
 npm run storybook
 ```
+## Project Screenshots
 
 !["Full Page View"](https://github.com/cjfelice/lighthouse-labs-scheduler/blob/master/docs/Screen%20Shot%202020-07-18%20at%205.08.28%20PM.png?raw=true)
 
